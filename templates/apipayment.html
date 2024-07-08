@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PayPal Checkout Integration</title>
+</head>
+<body>
+    <!-- Set up a container element for the button -->
+    <div id="paypal-button-container"></div>
+
+    <!-- Include the PayPal JavaScript SDK -->
+    <script src="https://www.paypal.com/sdk/js?client-id=AUDtd3hGtxQ4x18zCwF7ItaZyZ5nS7CCX6-M3PMY6cCPKJPgDZwLEkRp7VMaY8q7NvaGZWdrkOc8oCSW&currency=USD"></script>
+
+    <script>
+        // Render the PayPal button into #paypal-button-container
+        paypal.Buttons({
+            // Set up the transaction
+            createOrder: function(data, actions) {
+                return actions.order.create({
+                    purchase_units: [{
+                        amount: {
+                            value: '10.00' // Hardcoded amount for demo purposes
+                        }
+                    }]
+                });
+            },
+
+            // Finalize the transaction
+            onApprove: function(data, actions) {
+                return actions.order.capture().then(function(details) {
+                    alert('Transaction completed by ' + details.payer.name.given_name);
+                    // Call your server to save the transaction
+                    return fetch('/demo/checkout/api/paypal/order/' + data.orderID + '/capture/', {
+                        method: 'post'
+                    }).then(function(res) {
+                        return res.json();
+                    }).then(function(orderData) {
+                        console.log('Capture result', orderData, JSON.stringify(orderData, null, 2));
+                    });
+                });
+            }
+
+        }).render('#paypal-button-container');
+    </script>
+</body>
+</html>

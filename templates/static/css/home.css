@@ -1,0 +1,305 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    
+
+}
+:root{
+    --text: #0d0e0e;
+    --background: #f4f7f9;
+    --primary: #4e95b7;
+    --secondary: #8ac5e2;
+    --accent: #52b8e9;
+    }
+.bg-clr{
+    background-color: var(--primary);
+}
+body{
+    background-color: var(--background);
+}
+.search-box{
+    height: 90vh;
+    background-image: url(../images/bgg.webp);
+    background-size: cover;
+    
+}
+.search-field{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    
+}
+.search-field input,select{
+    border: none;
+    /* border-radius: 30px; */
+    border: 1px solid blue;
+    height: 45px;
+    width: 250px;
+    margin-top: 310px;
+}
+.search-field button{
+    border: none;
+    padding: 10px;
+    background-color: var(--secondary);
+    border-radius: 10px;
+    margin-top: 310px;
+}
+.search-box h1{
+    position: absolute;
+    top :30%;
+    left :30%;
+    color: aliceblue;
+    overflow-y: hidden;
+
+}
+.search-box h3{
+    position: absolute;
+    top :40%;
+    left :40%;
+    overflow-y: hidden;
+    color: aliceblue;
+
+}
+.popular{
+    height: fit-content;
+    margin-bottom: -12px;
+    padding-bottom: 32px;
+    background-color: var(--background);
+}
+.vehicle-list{
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    padding-top: 30px;
+}
+.vehicle-list .card{
+    background-color: var(--secondary);
+}
+.vehicle-list .card:hover{
+    transform: translateY(12px);
+}
+.steps{
+    height: 200px;
+    background-color: blueviolet;
+    
+}
+.list-steps{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap :230px;
+    padding-top: 50px;
+    overflow-y: hidden;
+}
+.step{
+    height: 70px;
+    width: 70px;
+    background-color: aliceblue;
+}
+.des{
+    display: flex;
+    justify-content: center;
+    gap:230px;
+    margin-top: 15px;    
+}
+.review{
+    height: 400px;
+    background-color: var(--background);
+    overflow-y: hidden;
+}
+.review .card{
+    padding-top:-2px;
+    background-color: var(--secondary);
+
+}
+.review-cards{
+    display: flex;
+    justify-content: center;
+    gap :90px;
+    margin-top: 40px;
+}
+.profile-img{
+    border: 1px solid black;
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+    margin: 20px 0px 0px 85px;
+    object-fit: cover;
+
+}
+.query{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 400px;
+    background-color: var(--background);
+}
+
+.query form{
+    border: 1px solid black;
+    width: 500px;
+    background-color: var(--secondary);
+    height: 300px;
+    border-radius: 20px;
+}
+.form-title{
+    display: flex;
+    justify-content: center;
+    
+}
+.form-title h3{
+    overflow-y: hidden;
+}
+.query-fields{
+    padding-left: 90px;
+    padding-top: 20px;
+    width: 90%;
+}
+.query-btn{
+    
+    display: flex;
+    flex-direction: row-reverse;
+    padding-right: 50px;
+    
+}
+.query-btn button{
+    border: none;
+    border-radius: 10px;
+    padding: 10px;
+    background-color: brown;
+    color: aliceblue;
+
+}
+.query-btn button:hover{
+    background-color: #03fb1c;
+}
+.ratring-rides span{
+    overflow-y: hidden;
+}
+.sub-title span{
+    
+    background-color: #52b8e9;
+    
+}
+
+@media screen and (max-width: 450px) {
+    .search-box{
+        
+        background-size: 410px 835px;
+        background-repeat: no-repeat;
+    }
+    .search-field{
+        flex-direction: column;
+        padding-top: 250px;
+        
+    }
+    .search-field input,select{
+        margin: 0;
+        height: 45px;
+        width: 250px;
+        
+    
+    }
+    .search-field button{
+        margin: 0;
+        border: none;
+        padding: 10px;
+
+        border-radius: 10px;
+      
+    }
+    .vehicle-list{
+        
+        flex-direction: column;
+        padding-left: 65px;
+        padding-bottom: 10px;
+        
+    }
+    .popular{
+        height: fit-content;
+        
+    }
+    .search-box h1{
+        
+        top :30%;
+        left :25%;
+    }
+    .search-box h3{
+        position: absolute;
+        top :40%;
+        left :25%;
+    }
+    .list-steps{
+       flex-direction: column;
+        gap :100px;
+        overflow-y: hidden;
+    }
+    .steps{
+        height: 700px;
+        background-color: blueviolet;
+        
+    }
+    .review{
+        height: 950px;
+    
+    }
+    hr{
+        background-color: var(--secondary);
+    }
+    .review-cards{
+        flex-direction: column;
+        align-items: center;
+        gap :30px;
+        margin-top: 20px;
+    }
+    .query form{
+    
+        width: 350px;
+    }
+    .query-fields{
+        padding-left: 70px;
+        padding-top: 20px;
+        width: 90%;
+    }
+    
+}
+.dropdown {
+    position: relative;
+    display: inline-block;
+    
+
+}
+.dropdown img{
+    border-radius: 50%;
+}
+.dropbtn {
+
+    color: white;
+    padding: 10px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+}
+
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 80px;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}

@@ -1,0 +1,270 @@
+
+
+body {
+  background: linear-gradient(90deg,#d6e4f0 , #ebeef1);
+  color: #fff;
+  font-family: 'Arial', sans-serif;
+  margin: 0;
+}
+:root{
+  --text: #0d0e0e;
+  --background: #f4f7f9;
+  --primary: #4e95b7;
+  --secondary: #8ac5e2;
+  --accent: #52b8e9;
+  }
+.bg-clr{
+  background-color: var(--primary);
+}
+
+.profile-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+}
+
+.container-1 {
+  width: 100%;
+  max-height: 100%;
+}
+
+.card-1{
+  border: none;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 100%;
+
+  
+}
+.card-2{
+  border: none;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  background-color: #ded2f3;
+
+
+}
+.details{
+  gap: 30px;
+}
+
+.card-body {
+  padding: 20px;
+}
+
+.card .crd {
+  border-radius: 50%;
+}
+
+.breadcrumb {
+  background: linear-gradient(90deg, #f0f0f0, #ffffff);
+}
+
+.list-group {
+  width: 100%;
+  border-radius: 10px;
+}
+
+.list-group-item {
+
+  border: none;
+  margin-bottom: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s ease;
+}
+
+.list-group-item:hover {
+  background-color: #d4d4d4;
+}
+
+.btn-primary {
+  background: linear-gradient(90deg, #007BFF, #6610f2);
+  border: none;
+}
+
+.btn-primary:hover {
+  background: linear-gradient(90deg, #6610f2, #007BFF);
+}
+
+
+.list-group-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px;
+}
+
+.list-group-item i {
+  margin-right: 10px;
+}
+.prodetails{
+  display: flex;
+  flex-direction: column;
+}
+.details-header{
+  background-color: #d4d4d4;
+  padding: 10px;
+}
+.user-details{
+  margin-left: 50px;
+  height: 130px;
+  column-gap: 50px;
+  overflow-y: auto;
+  overflow-x: hidden;
+  
+}
+.upt-btn button{
+  border: 0;
+  padding: 10px;
+  border-radius: 10px;
+  background-color: orange;
+  color: #f0f0f0;
+
+}
+.upt-btn{
+display: flex;
+justify-content: end;
+margin-right: 20px;
+}
+.chngpass-btn button{
+  border: 0;
+  padding: 10px;
+  border-radius: 10px;
+  background-color: rgb(111, 255, 0);
+  color: #f0f0f0;
+
+}
+.chngpass-btn{
+  display: flex;
+  justify-content: end; 
+  margin-right: 20px;
+}
+.mybooking{
+  margin: auto;
+  padding: 20px;
+}
+.options a{
+  text-decoration: none;
+  border-radius: 0px;
+  
+}
+.crd-img{
+  width: 179px;
+  height: 184px;
+}
+.basic-details h5{
+  display: inline;
+
+}
+.basic-details .type{
+  padding-left: 5px;
+  font-size: normal;
+
+}
+.basic-details{
+  gap: 30px;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+
+}
+.dropdown img{
+  border-radius: 50%;
+}
+
+
+.dropbtn {
+
+  color: white;
+  padding: 10px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+}
+
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 80px;
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+.stars {
+  display: inline-block;
+  font-size: 30px;
+  cursor: pointer;
+}
+
+.stars .star {
+  color: #ccc;
+}
+
+.stars .star.checked {
+  color: #f8d301;
+}
+@media (max-width: 768px) {
+  .profile-section {
+    flex-direction: column;
+    text-align: center;
+    height: 100%;
+  }
+  .container {
+    margin: 20px;
+  }
+  .col-lg-12 {
+    margin-top: 20px;
+  }
+}
+@media screen and (max-width: 553px) {
+  .container-1{
+    height: 100%;
+  }
+  .prodetails {
+    flex-direction: row;
+    column-gap: 10px;
+  }
+  .details{
+    flex-direction: column;
+
+
+  }
+  .card-1{
+    width: 50%;
+  }
+  .options{
+  padding: 30px;
+  }
+  .user-details{
+    margin-left: 50px;
+    height: 450px;
+    row-gap: 10px;
+    overflow-y: auto;
+    overflow-x: hidden;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+  }
+  .user-details input{
+    width: 100%;
+  }
+  .user-details label{
+    margin-left: 0px;
+
+  }
+}

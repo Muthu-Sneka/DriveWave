@@ -1,0 +1,204 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    
+}
+:root{
+    --text: #0d0e0e;
+    --background: #f4f7f9;
+    --primary: #4e95b7;
+    --secondary: #8ac5e2;
+    --accent: #52b8e9;
+    }
+.bg-clr{
+    background-color: var(--primary);
+}
+.vehicle-details{
+    width: 100%;
+    display: flex;
+    gap :5px;
+    flex-direction: row;
+}
+.details{
+    display: flex;
+    flex-direction: column;
+    gap :20px;
+    /* border :1px solid black;
+    height: 100%; */
+    margin: 40px;
+    width: 60%;
+}
+.payment{
+    
+    width: 25%;
+    margin: 40px;
+    height: 600px;
+}
+/* .payment .card{
+    position: fixed;
+} */
+
+.vehicle-pics{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 40px;
+    
+}
+.vehicle-pics .card{
+    width: 90%;
+    height: 300px;
+    
+}
+.pic{
+    margin: 10px;
+}
+.stoe{
+    display: flex;
+    justify-content: center;
+    
+}
+.stoe .card{
+    width: 820px;
+}
+.det{
+    display: flex;
+    gap :20px;
+}
+.vehicle-name{
+    margin: 10px;
+}
+.time{
+    display: flex;
+    gap :500px;
+}
+.about{
+    display: flex;
+    justify-content: center;
+}
+.about .card{
+    width :820px;
+}
+.features{
+    display: flex;
+    gap :5px;
+}
+.cancel{
+    display: flex;
+    justify-content: center;
+}
+.cancel .card{
+    width: 820px;
+    height: 300px;
+}
+.review{
+    display: flex;
+    justify-content: center;
+}
+.review .card{
+    width: 820px;
+    height: fit-content ;
+
+}
+.pro-name{
+    display: flex;
+    gap :10px;
+}
+.pro-name img{
+    border-radius: 50%;
+}
+.review-contnet{
+    display: flex;
+    flex-direction: column;
+    margin: 30px;
+    
+}
+.card-footer button{
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    color: white;
+}
+.dropdown {
+    position: relative;
+    display: inline-block;
+
+}
+.dropdown img{
+    border-radius: 50%;
+}
+
+
+.dropbtn {
+
+    color: white;
+    padding: 10px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+}
+
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 80px;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+@media screen and (max-width: 450px){
+    .vehicle-details{
+        width: 100%;
+        flex-direction: column;
+        column-gap :5px;
+        
+    }
+    .details{
+        display: flex;
+        flex-direction: column;
+        gap :10px;
+    
+        height: fit-content;
+        margin: 15px;
+        width: 100%;
+    }
+    .stoe .card{
+        width: 300px;
+    }
+    .time{
+        flex-direction: column;
+        gap :20px;
+        /* column-gap :30px; */
+    }
+    .about .card{
+        width :300px;
+    }
+    .cancel .card{
+        width: 300px;
+        height: fit-content;
+        /* height: 300px; */
+    }
+    .payment{
+    
+        width: 300px;
+        margin: 40px;
+        height: 600px;
+        padding-top: 0px;
+    }
+    
+
+}

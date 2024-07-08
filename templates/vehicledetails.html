@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="templates/static/css/vdetails.css">
+    <title>Vehicle Details</title>
+</head>
+<body>
+  <!--Header-->
+  <header class="p-3 bg-clr text-white">
+    <div class="container">
+      <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
+        <a href="/" class="d-flex align-items-center mb-2 mb-lg-0 text-white text-decoration-none">
+          <img src="templates/static/images/logo.png" alt="logo" width="120" height="60" >
+        </a>
+
+        <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
+          <!--<li><a href="#" class="nav-link px-2 text-dark">Home</a></li>-->
+          <!-- <li><a href="#" class="nav-link px-2 text-dark">Features</a></li>
+          <li><a href="#" class="nav-link px-2 text-dark">Pricing</a></li>
+          <li><a href="#" class="nav-link px-2 text-dark">FAQs</a></li>
+          <li><a href="#" class="nav-link px-2 text-dark">About</a></li> -->
+        </ul>
+
+        <div class="text-end">
+          {%if login_status==0%}
+          <a href="/login" class="btn btn-warning me-2">Login/SignUp</a>
+          {%else%}
+          <div class="dropdown">
+            <img src="templates/static/images/profile.png" alt="" width="50" height="50">
+             <div id="dropdownMenu" class="dropdown-content">
+                 <a href="/profile">Profile</a>
+                 <a href="/logout">Logout</a>
+             </div>
+         </div>
+         {%endif%}
+        </div>
+      </div>
+    </div>
+</header>
+    <div class="vehicle-details">
+        <div class="details">
+            <!--vehicle pics-->
+            <div class="vehicle-pics">
+                <div class="card">
+                    <div class="pic">
+                        <div id="carouselExampleIndicators" class="carousel slide">
+                            <div class="carousel-indicators">
+                              <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                              <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                              <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                              <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="3" aria-label="Slide 4"></button>
+                            </div>
+                            <div class="carousel-inner">
+                              {% if type =="Car"%}
+                                <div class="carousel-item active">
+                                  <img src="admin/templates/car_images/{{vehicle_details.Image1}}" class="d-block w-100" alt="..." height="250">
+                                </div>
+                                <div class="carousel-item">
+                                  <img src="admin/templates/car_images/{{vehicle_details.Image2}}" class="d-block w-100" alt="..." height="250">
+                                </div>
+                                <div class="carousel-item">
+                                  <img src="admin/templates/car_images/{{vehicle_details.Image3}}" class="d-block w-100" alt="..." height="250">
+                                </div>
+                                <div class="carousel-item">
+                                  <img src="admin/templates/car_images/{{vehicle_details.Image4}}" class="d-block w-100" alt="..." height="250">
+                                </div>
+                              {% elif type == "Bike"%}
+                                  <div class="carousel-item active">
+                                    <img src="admin/templates/bike_images/{{vehicle_details.Image1}}" class="d-block w-100" alt="..." height="250">
+                                  </div>
+                                  <div class="carousel-item">
+                                    <img src="admin/templates/bike_images/{{vehicle_details.Image2}}" class="d-block w-100" alt="..." height="250">
+                                  </div>
+                                  <div class="carousel-item">
+                                    <img src="admin/templates/bike_images/{{vehicle_details.Image3}}" class="d-block w-100" alt="..." height="250">
+                                  </div>
+                                  <div class="carousel-item">
+                                    <img src="admin/templates/bike_images/{{vehicle_details.Image4}}" class="d-block w-100" alt="..." height="250">
+                                  </div>
+                              {% endif %}
+                            </div>
+                            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+                              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                              <span class="visually-hidden">Previous</span>
+                            </button>
+                            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+                              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                              <span class="visually-hidden">Next</span>
+                            </button>
+                          </div>
+                    </div>
+                      
+                    
+                    
+                </div>
+                
+
+            </div>
+
+            <!--start and end time details-->
+
+            <div class="stoe">
+                <div class="card">
+                    
+                    <div class="card-body">
+                        <div class="vehicle-name">
+                          {% if type =="Car"%}
+                            <strong>{{vehicle_details.Carname_model}}</strong>
+                            <div class="det">
+                                <li>{{vehicle_details.Vehicletype}}</li>
+                                <li>{{vehicle_details.Transmission}}</li>
+                                <li>{{vehicle_details.Fueltype}}</li>
+                                <li>{{vehicle_details.Seats}}</li>
+
+                            </div>
+                            {% endif %}
+                          {% if type=="Bike"%}
+                            <h4>{{vehicle_details.Bikename_model}}</h4>
+                            <div class="det">
+                                <li>{{vehicle_details.Vehicletype}}</li>
+                                <li>{{vehicle_details.Starttype}}</li>
+                                <li>{{vehicle_details.Fueltype}}</li>
+                              
+                            </div>
+                          {% endif %}
+                           
+
+                        </div>
+                        <hr>
+                        <div class="booking-time">
+                            <strong>Booking time</strong>
+                            <div class="time">
+                                <div class="pickup">
+                                    <span>Pickup</span><br>
+                                    <small>{{starttime}}</small>
+
+
+                                </div>
+                                    <div class="drop">
+                                        <span>Drop</span><br>
+                                        <small>{{endtime}}</small>
+
+
+                                    </div>
+                            </div>
+
+                        </div>
+                    
+                    </div>
+                    
+                  </div>
+
+            </div>
+            <!--About vehicle-->
+            <div class="about">
+                <div class="card">
+                    <h5 class="card-header">About the vehicle</h5>
+                    <div class="card-body">
+                        <div class="row">
+                          {% if type =="Bike" %}
+                            <div class="col-6 col-sm-6 col-md-2 col-lg-3 mt-2 mb-2 ">
+                              <i class="bi bi-caret-right-fill"></i>
+                                <span>{{vehicle_details.Fueltype}}</span>
+                            </div>
+
+                            <div class="col-6 col-sm-6 col-md-2 col-lg-3 mt-2 mb-2 ">
+                              <i class="bi bi-caret-right-fill"></i>
+                                <span>{{vehicle_details.Vehicletype}}</span>
+                            </div>
+
+                            <div class="col-6 col-sm-6 col-md-2 col-lg-3 mt-2 mb-2 ">
+                              <i class="bi bi-caret-right-fill"></i>
+                                <span>{{vehicle_details.Starttype}}</span>
+                            </div>
+
+                            <div class="col-6 col-sm-6 col-md-2 col-lg-3 mt-2 mb-2 ">
+                              <i class="bi bi-caret-right-fill"></i>
+                                <span>{{vehicle_details.Ccofthebike}}CC</span>
+                            </div>
+
+                            <div class="col-6 col-sm-6 col-md-2 col-lg-3 mt-2 mb-2 ">
+                              <i class="bi bi-caret-right-fill"></i>
+                                <span>{{vehicle_details.Mileage}} Mileage</span>
+                            </div>
+
+
+                          {% endif %}
+
+                          {% if type== "Car" %}
+                             {% for i in vehicle_details.Others%}
+                                <div class="col-6 col-sm-6 col-md-2 col-lg-3 mt-2 mb-2 ">
+                                  <i class="bi bi-caret-right-fill"></i>
+                                    <span>{{i}}</span>
+                                </div>
+                              {% endfor %}
+
+                          {% endif %}
+                              
+
+                            
+
+                        </div>
+                        
+                      
+                     
+                    </div>
+                  </div>
+
+            </div>
+            <!-- Cancellation Policy  -->
+            <div class="cancel">
+                <div class="card">
+                  <h5 class="card-header"> Cancellation Policy </h5>
+                  <div class="card-body d-flex flex-column gap-4 m-3">
+                    <li>If booking is cancelled >24 hours from booking start time 100% booking fee, excluding the convenience fee will be refunded.</li>
+                    <li> If the booking is cancelled between 24 hours to 6 hours from the booking start time 50% of the booking fee will be refunded</li>
+                    <li>If the booking is cancelled in the last 6 hours or after the booking start time 0% will be refunded</li>
+                    <li>In case a user has cancelled multiple consecutive bookings then they will be charged 50%</li>
+                  </div>
+                </div>
+
+            </div>
+            <!--review-->
+            <div class="review">
+              <div class="card">
+                <h5 class="card-header"><strong>Customer Review</strong></h5>
+               {% for i in userdetails %}
+                 <div class="review-contnet py-10">
+                   <div class="pro-name">
+                      <img src="templates/static/images/profile.png" alt="" width="50" height="50">
+                      <span>{{i[1].Username}}</span>
+                      <div>
+                        {% for k in range(i[0].Noofstarts)%}
+                        <span class="fa fa-star checked"></span>
+                        {% endfor %}
+                      </div>
+                   </div>
+                   <div class="content">
+                    <span>{{i[0].Review_Content}}</span>
+                   </div>
+                 
+
+                 </div>
+                 {% endfor %}
+                 <div class="review-contnet py-10">
+                  <div class="pro-name">
+                     <img src="templates/static/images/profile.png" alt="" width="50" height="50">
+                     <span>demo</span>
+                     <div>
+                      <span class="fa fa-star checked"></span>
+                      <span class="fa fa-star checked"></span>
+                      <span class="fa fa-star checked"></span>
+                      <span class="fa fa-star"></span>
+                      <span class="fa fa-star"></span>
+                    </div>
+                  </div>
+                  <div class="content">
+                   <span>The vehicle I rented was in excellent condition and performed well throughout my trip. Your website made the rental process easy, and I was impressed by the range of vehicles available. I'll definitely be using your service again in the future!</span>
+
+                  </div>
+
+                </div>
+                <div class="review-contnet py-10">
+                  <div class="pro-name">
+                     <img src="templates/static/images/profile.png" alt="" width="50" height="50">
+                     <span>demo</span>
+                     <div>
+                      <span class="fa fa-star checked"></span>
+                      <span class="fa fa-star checked"></span>
+                      <span class="fa fa-star checked"></span>
+                      <span class="fa fa-star"></span>
+                      <span class="fa fa-star"></span>
+                    </div>
+                  </div>
+                  <div class="content">
+                   <span>"I was very satisfied with the vehicle I rented from your website. It was clean, comfortable, and reliable. The rental process was easy, and your customer service was top-notch. I will definitely be recommending your service to friends and family.</span>
+
+                  </div>
+
+                </div>
+
+              </div>
+
+            </div>
+
+        </div>
+        <div class="payment py-5 sm-py-1 lg-py-5 md-py-5">
+            <div class="card">
+              <h5 class="card-header">Payment Details</h5>
+              <div class="card-body row">
+                <div class="amount col-sm-8 col-lg-8 col-md-8">
+                   <span>Trip Amount (this does not include tax) </span>
+                </div>
+                <div class="amount col-sm-4 col-lg-4 col-md-4">
+                   <span>₹{{total_cost}}</span>
+                </div>
+
+              
+                
+                <!-- <div class="amount col-sm-8 col-lg-8 col-md-8">
+                  <span>Trip Amount (this does not include fuel) </span>
+                </div>
+                <div class="amount col-sm-4 col-lg-4 col-md-4">
+                  <span>₹334,200</span>
+                </div> -->
+
+            
+                <hr>
+                <div class="amount col-sm-8 col-lg-8 col-md-8">
+                  <span>Trip Protection Fee </span>
+                </div>
+                <div class="amount col-sm-4 col-lg-4 col-md-4">
+                  <span>+ ₹500</span>
+
+                </div>
+                <hr>
+               
+                <div class="amount col-sm-8 col-lg-8 col-md-8">
+                  <span>Tax</span>
+                </div>
+                <div class="amount col-sm-4 col-lg-4 col-md-4">
+                  <span>+ ₹120</span>
+                  </div>
+                  <hr>
+
+                  <div class="amount col-sm-8 col-lg-8 col-md-8">
+                    <span>Final Amount </span>
+                  </div>
+
+                  <div class="amount col-sm-4 col-lg-4 col-md-4">
+                    <span>₹{{final_amount}}</span>
+                  </div>
+                  
+              
+
+              </div>
+              <div class="card-footer">
+             
+                {% if login_status==0 %}
+                   <button type="button" class="btn btn-danger" onclick="redirecttologin()">Login TO PAY</button>
+                {%else%}
+                <div id="paypal-button-container"></div>
+                {%endif%}
+
+              </div>
+
+            </div>
+
+        </div>
+    
+            
+
+    </div>
+    <!--Footer-->
+    <div class="container">
+      <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
+        <div class="col-md-4 d-flex align-items-center">
+          <a href="/" class="mb-3 me-2 mb-md-0 text-muted text-decoration-none lh-1">
+            <svg class="bi" width="30" height="24"><use xlink:href="#bootstrap"/></svg>
+          </a>
+          <span class="mb-3 mb-md-0 text-muted">&copy; 2024 Drivewave Rental, Inc</span>
+        </div>
+    
+        <ul class="nav col-md-4 justify-content-end list-unstyled d-flex">
+          <li class="ms-3"><a class="text-muted" href="#"><svg class="bi" width="24" height="24"><use xlink:href="#twitter"/></svg></a></li>
+          <li class="ms-3"><a class="text-muted" href="#"><svg class="bi" width="24" height="24"><use xlink:href="#instagram"/></svg></a></li>
+          <li class="ms-3"><a class="text-muted" href="#"><svg class="bi" width="24" height="24"><use xlink:href="#facebook"/></svg></a></li>
+        </ul>
+      </footer>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://www.paypal.com/sdk/js?client-id=AaqtifeoLC2x3515Nc0IkaET9eMwyLTk7oFlv_Y5KTbnfKRT9S5gN52JOZ2xrunvC8o4c0UAd-0o1apO&currency=USD"></script>
+    <script>
+      // Render the PayPal button into #paypal-button-container
+      var money='{{final_amount}}'/80;
+      paypal.Buttons({
+          // Set up the transaction
+          createOrder: function(data, actions) {
+              return actions.order.create({
+                  purchase_units: [{
+                      amount: {
+                          value: money // Hardcoded amount for demo purposes
+                      }
+                  }]
+              });
+          },
+
+          // Finalize the transaction
+          onApprove: function(data, actions) {
+              return actions.order.capture().then(function(details) {
+                  //alert('Transaction completed by ' + details.payer.name.given_name);
+                  let formData = new FormData();
+                  formData.append("vehicleid", "{{id}}");
+                  formData.append("starttime", "{{starttime}}");
+                  formData.append("endtime", "{{endtime}}");
+                  formData.append("final_cost", "{{final_amount}}");
+                  formData.append("paymentid", data.orderID);
+                  formData.append("city", "{{location}}");
+                  formData.append("location", "{{place}}");
+                
+                  $.ajax({
+                    type: "POST",
+                    url: "/payment",
+                    data: formData,
+                    encode: true,
+                    dataType: 'json',
+                    processData: false,
+                    contentType: false,
+                  }).done(function (data1) {
+                    if (data1 == "Done") {
+                      location.reload();
+                    } else {
+                      window.location.href="/login";
+                    }
+                  });
+                  // Call your server to save the transaction
+                  return fetch('/demo/checkout/api/paypal/order/' + data.orderID + '/capture/', {
+                      method: 'post'
+                  }).then(function(res) {
+                      return res.json();
+                  }).then(function(orderData) {
+                      console.log('Capture result', orderData, JSON.stringify(orderData, null, 2));
+                  });
+              });
+          }
+
+      }).render('#paypal-button-container');
+  </script>
+    <script>
+        
+      function redirecttologin() {
+           window.location.href="/login";
+      }
+      
+    </script>
+</body>
+</html>

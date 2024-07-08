@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="templates/static/css/home.css">
+    <title>Home</title>
+</head>
+<body>
+    <!--Header-->
+    <header class="p-3 bg-clr text-white">
+      <div class="container">
+        <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
+          <a href="/" class="d-flex align-items-center mb-2 mb-lg-0 text-white text-decoration-none">
+            <img src="templates/static/images/logo.png" alt="logo" width="120" height="60" >
+          </a>
+  
+          <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
+           <!-- <li><a href="#" class="nav-link px-2 text-dark">Home</a></li>-->
+            <!-- <li><a href="#" class="nav-link px-2 text-dark">Features</a></li>
+            <li><a href="#" class="nav-link px-2 text-dark">Pricing</a></li>
+            <li><a href="#" class="nav-link px-2 text-dark">FAQs</a></li>
+            <li><a href="#" class="nav-link px-2 text-dark">About</a></li> -->
+          </ul>
+  
+          <div class="text-end">
+            {%if login_status==0%}
+            <a href="/login" class="btn btn-warning me-2">Login/SignUp</a>
+            {%else%}
+            <div class="dropdown">
+              <img src="templates/static/images/profile.png" alt="" width="50" height="50">
+               <div id="dropdownMenu" class="dropdown-content">
+                   <a href="/profile">Profile</a>
+                   <a href="/logout">Logout</a>
+               </div>
+           </div>
+           {%endif%}
+            
+          
+           
+          </div>
+        </div>
+      </div>
+  </header>
+
+    <!--Search bar-->
+    <div class="search-box">
+        <h1> Self-Drive Vehicle Rentals in {{location}} </h1>
+        <h3>Book your drive now!</h3>
+        <form class="needs-validation" novalidate>
+        <div class="search-field">
+                <select name="place" id="place" class="form-control" style="width :250px;" required>
+                  <option value="" disabled selected>select location</option>
+                  {% for i in place%}
+                    <option value="{{i}}">{{i}}</option>
+                  {% endfor %}
+                </select>
+                
+                <input type="datetime-local" id="start-time"  class="form-control"  min=""   placeholder="select pickup and drop time and date" required>
+                <input type="datetime-local" id="end-time"  class="form-control"    min=""  placeholder="select pickup and drop time and date" required>
+                <select name="" id="type" class="form-control" style="width :250px;" required>
+                  <option value="" disabled selected>select vehicle type</option>
+                  <option value="Bike">Bike</option>
+                  <option value="Car">Car</option>
+                </select>
+                <button type="button" id="search" >Search</button>
+              
+        </div>
+      </form>
+
+    </div>
+
+    <!--section-1-->
+    <div class="popular">
+      <div class="py-1 px-2">
+        <h1><span class="badge bg-success text-dark">Popular vehicles</span></h1>
+      </div>
+        <div class="vehicle-list">
+            <div class="card" style="width: 18rem;">
+                <img src="templates/static/images/bike.jpg" class="card-img-top" alt="..." height="200">
+                <div class="card-body">
+                  <div class="ratring-rides d-flex flex-column gap-1">
+                    <span class="fa fa-star checked">4.5</span>
+                    <span>10 trips</span>
+                  </div>
+                  <div calss="car-name">
+                    <strong>Supra | 2003</strong>
+                  </div>
+                  <div class="features d-flex gap-3">
+                    <li class="text-black-50">Manual</li>
+                    <li class="text-black-50" >petrol</li>
+                    <li class="text-black-50">4 Seats</li>
+                  </div>
+                  <div class="cost">
+                    <strong> ₹199/hr </strong>
+
+                  </div>
+
+                  
+                </div>
+              </div>
+              <div class="card" style="width: 18rem;">
+                <img src="templates/static/images/car.jpg" class="card-img-top" alt="..." height="200">
+                <div class="card-body">
+                  <!-- <h5 class="card-title">Card title</h5>
+                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p> -->
+                  <div class="ratring-rides d-flex flex-column gap-1">
+                    <span class="fa fa-star checked">4.5</span>
+                    <span>10 trips</span>
+                  </div>
+                  <div calss="car-name">
+                    <strong>Supra | 2003</strong>
+                  </div>
+                  <div class="features d-flex gap-3">
+                    <li class="text-black-50">Manual</li>
+                    <li class="text-black-50" >petrol</li>
+                    <li class="text-black-50">4 Seats</li>
+                  </div>
+                  <div class="cost">
+                    <strong> ₹199/hr </strong>
+
+                  </div>
+              
+                  
+                 
+                </div>
+              </div>
+              <div class="card" style="width: 18rem;">
+                <img src="templates/static/images/carr.jpg" class="card-img-top" alt="..." height="200">
+                <div class="card-body">
+                  <div class="ratring-rides d-flex flex-column gap-1">
+                    <span class="fa fa-star checked">4.5</span>
+                    <span>10 trips</span>
+                  </div>
+                  <div calss="car-name">
+                    <strong>Supra | 2003</strong>
+                  </div>
+                  <div class="features d-flex gap-3">
+                    <li class="text-black-50">Manual</li>
+                    <li class="text-black-50" >petrol</li>
+                    <li class="text-black-50">4 Seats</li>
+                  </div>
+                  <div class="cost">
+                    <strong> ₹199/hr </strong>
+
+                  </div>
+                  
+                </div>
+              </div>
+              <div class="card" style="width: 18rem;">
+                <img src="templates/static/images/bike.jpg" class="card-img-top" alt="..."  height="200">
+                <div class="card-body">
+                  <div class="ratring-rides d-flex flex-column gap-1">
+                    <span class="fa fa-star checked">4.5</span>
+                    <span>10 trips</span>
+                  </div>
+                  <div calss="car-name">
+                    <strong>Supra | 2003</strong>
+                  </div>
+                  <div class="features d-flex gap-3">
+                    <li class="text-black-50">Manual</li>
+                    <li class="text-black-50" >petrol</li>
+                    <li class="text-black-50">4 Seats</li>
+                  </div>
+                  <div class="cost">
+                    <strong> ₹199/hr </strong>
+
+                  </div>
+  
+                 
+                </div>
+              </div>
+
+        </div>
+
+    </div>
+    <!--setps to get vehicle for rent-->
+    <!-- <div class="steps">
+      <div class="list-steps">
+        <div class="step">
+
+        </div>
+      
+        
+        <div class="step">
+
+        </div>
+       
+        
+        <div class="step">
+
+        </div>
+        <div class="step">
+
+        </div>
+        
+
+      </div>
+      <div class="des">
+        <h5>hello</h5>
+        <h5>hello</h5>
+        <h5>hello</h5>
+        <h5>hello</h5>
+      </div>
+     
+
+    </div> -->
+    <hr>
+    <!--customer review-->
+    <div class="review">
+      <div class="px-2">
+        <h1><span class="badge bg-warning text-dark">customer Reviews</span></h1>
+      </div>
+      <div class="review-cards">
+        <div class="card" style="width: 18rem;">
+          <img src="templates/static/images/profile.png" class="card-img-top profile-img" alt="...">
+          <div class="card-body">
+            <i class="bi bi-star-fill"></i><span class="px-1">4.5</span>
+            <p class="card-text">Easy to use, competitive prices, wide selection. Excellent customer service, highly recommend!</p>
+          </div>
+        </div>
+
+        <div class="card" style="width: 18rem;">
+          <img src="templates/static/images/profile.png" class="card-img-top profile-img" alt="...">
+          <div class="card-body">
+            <i class="bi bi-star-fill"></i><span class="px-1">4.5</span>
+            <p class="card-text">Hassle-free booking, clean cars, great service. Will use again for sure!</p>
+          </div>
+        </div>
+
+        <div class="card" style="width: 18rem;">
+          <img src="templates/static/images/profile.png" class="card-img-top profile-img" alt="...">
+          <div class="card-body">
+            <i class="bi bi-star-fill"></i><span class="px-1">4.5</span>
+            <p class="card-text">User-friendly, competitive prices, excellent selection. Top-notch customer service, highly recommend!</p>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+    <hr>
+    <div class="px-2">
+      <h1><span class="badge bg-danger">Query</span></h1>
+    </div>
+    <!--Query form-->
+    <div class="query">
+      <form action="">
+          <div class="form-title">
+            <h3>
+              Query Form
+            </h3>
+          </div>
+          <div class="query-fields">
+            <div class="form-floating mb-3">
+              <input type="email" class="form-control" id="emailid" name="emailid" placeholder="" required>
+              <label for="floatingInput">Email</label>
+            </div>
+            <div class="form-floating mb-3">
+              <textarea class="form-control" placeholder="Leave a comment here" id="querycontent" name="querycontent" rows="8" cols="50" required></textarea>
+              <label for="floatingInput">Enter your queries</label>
+              </div>
+
+          </div>
+          <div class="query-btn">
+            <button type="button" onclick="queryRequest()">
+              submit
+            </button>
+
+
+          </div>
+        
+    
+      </form>
+
+    </div>
+    <!--Footer-->
+    <div class="container">
+      <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
+        <div class="col-md-4 d-flex align-items-center">
+          <a href="/" class="mb-3 me-2 mb-md-0 text-muted text-decoration-none lh-1">
+            <svg class="bi" width="30" height="24"><use xlink:href="#bootstrap"/></svg>
+          </a>
+          <span class="mb-3 mb-md-0 text-muted">&copy; 2024 Drivewave Rental, Inc</span>
+        </div>
+    
+        <ul class="nav col-md-4 justify-content-end list-unstyled d-flex">
+          <li class="ms-3"><a class="text-muted" href="#"><svg class="bi" width="24" height="24"><use xlink:href="#twitter"/></svg></a></li>
+          <li class="ms-3"><a class="text-muted" href="#"><svg class="bi" width="24" height="24"><use xlink:href="#instagram"/></svg></a></li>
+          <li class="ms-3"><a class="text-muted" href="#"><svg class="bi" width="24" height="24"><use xlink:href="#facebook"/></svg></a></li>
+        </ul>
+      </footer>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+      var now = new Date();
+      const currentDate = now.toISOString().slice(0, 10);
+      const currentTime = now.toLocaleTimeString('en-US', {hour12: false, hour: '2-digit', minute: '2-digit'});
+      document.getElementById('start-time').setAttribute('min', `${currentDate}T${currentTime}`);
+      document.getElementById('end-time').setAttribute('min', `${currentDate}T${currentTime}`);
+      var flag=0;
+      function validateStartTime() {
+        
+        now = new Date();
+        
+        var startTime = document.getElementById('start-time').value;
+        const date1 = new Date(startTime);
+        var parts = startTime.split('T');
+     //   var date=parts[0];
+        var time = parts[1];
+        var currentTime = now.toLocaleTimeString('en-US', {hour12: false, hour: '2-digit', minute: '2-digit'});
+        var [hours1, minutes1] = time.split(':').map(Number);
+        var [hours2, minutes2] = currentTime.split(':').map(Number);
+    
+        var totalMinutes1 = hours1 * 60 + minutes1;
+        var totalMinutes2 = hours2 * 60 + minutes2+60;
+
+        if (totalMinutes1 < totalMinutes2 &&now==date1) {
+          alert("Start time  atleast one hour greater than current time.");
+          document.getElementById('start-time').value = "";
+        } 
+      }
+      function validateEndTime() {
+        now = new Date();
+        var endTime = document.getElementById('end-time').value;
+        const date1 = new Date(endTime);
+        var parts = endTime.split('T');
+        var time = parts[1];
+        var currentTime = now.toLocaleTimeString('en-US', {hour12: false, hour: '2-digit', minute: '2-digit'});
+        
+        var [hours1, minutes1] = time.split(':').map(Number);
+        var [hours2, minutes2] = currentTime.split(':').map(Number);
+    
+        var totalMinutes1 = hours1 * 60 + minutes1;
+        var totalMinutes2 = hours2 * 60 + minutes2+60;
+    
+        if (totalMinutes1 < totalMinutes2&&now==date1) {
+          flag=1;
+          alert("End time should be greater than current time.");
+          document.getElementById('end-time').value = "";
+        } 
+      }
+      function validateBothTime() {
+        now = new Date();
+        var startTime = document.getElementById('start-time').value;
+        var endTime = document.getElementById('end-time').value;
+        var parts1 = startTime.split('T');
+        var time1 = parts1[1];
+        var parts2 = endTime.split('T');
+        var time2 = parts2[1];
+        var [hours1, minutes1] = time1.split(':').map(Number);
+        var [hours2, minutes2] = time2.split(':').map(Number);
+        var totalMinutes1 = hours1 * 60 + minutes1;
+        var totalMinutes2 = hours2 * 60 + minutes2;
+      
+    
+        if ((totalMinutes2-totalMinutes1)<120) {
+          flag=1;
+            alert("End time should be at least one hour after start time.");
+            document.getElementById('end-time').value = "";
+        }
+      }
+      const redirect=document.getElementById("search");
+      redirect.addEventListener("click", ()=>{
+        flag=0;
+        
+        (() => {
+          'use strict'
+        
+          // Fetch all the forms we want to apply custom Bootstrap validation styles to
+          const forms = document.querySelectorAll('.needs-validation')
+        //  let flag=0;
+          // Loop over them and prevent submission
+          Array.from(forms).forEach(form => {
+              if (!form.checkValidity()) {
+                event.preventDefault()
+                event.stopPropagation()
+                alert("Please enter all details");
+                flag=1;
+              }
+        
+              form.classList.add('was-validated')
+          })
+        })()
+       if(flag==0){
+       validateStartTime();
+       validateEndTime();
+      // validateBothTime();
+      if(flag==0){
+       let place=document.getElementById("place").value;
+       let starttime=document.getElementById("start-time").value;
+       let endtime=document.getElementById("end-time").value;
+       let type=document.getElementById("type").value;
+      
+       window.location.href="/vehiclelist?location="+ "{{location}}" + "&" + "place=" + place +"&"+ "starttime=" + starttime + "&" + "endtime=" + endtime + "&" + "vtype="+ type ;
+       }
+      }
+     });
+     function queryRequest(){
+      let formData =new FormData();
+      formData.append("emailid",$("#emailid").val());
+      formData.append("querycontent",$("#querycontent").val());
+      $.ajax({
+        type: "POST",
+        url : "/query_request",
+        data: formData,
+        encode: true,
+        dataType: 'json',
+        processData: false,
+        contentType: false,
+
+      }).done(function(response){
+        if(response=="Done"){
+          location.reload();
+        }
+
+      });
+     }
+    </script>
+</body>
+</html>

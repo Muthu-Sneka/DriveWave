@@ -1,0 +1,311 @@
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica,
+    Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  color: #413a45;
+  margin: 0;
+  background-color: #f5f5f5 !important;
+}
+:root{
+  --text: #0d0e0e;
+  --background: #f4f7f9;
+  --primary: #4e95b7;
+  --secondary: #8ac5e2;
+  --accent: #52b8e9;
+  }
+.bg-clr{
+  background-color: var(--primary);
+}
+#top {
+  width: 100%;
+  position: fixed;
+}
+.card {
+  background-image: linear-gradient(to top, #fff1eb 0%, #ace0f9 100%) !important; 
+}
+.navbar {
+  background: black !important;
+}
+.car-list-home-container .car-list-home .car-list-card-image>img {
+  border-top-left-radius: 16px;
+  border-top-right-radius: 16px;
+  height: 100%;
+  width: 100%;
+  -o-object-fit: cover;
+  object-fit: cover
+}
+.car-list-home-container .car-list-home .car-list-card-description-reviews {
+  display: flex;
+  align-items: center;
+  gap: 5px
+}
+.car-list-home-container .car-list-home .car-list-card-description-properties {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  margin-top: 5px
+}
+.car-list-home-container .car-list-home .car-list-card-description-properties-property {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 12px;
+  font-weight: normal;
+  line-height: 1.33;
+  letter-spacing: .4px;
+  color: #7a7777
+}
+.car-list-home-container .car-list-home .car-list-card-description-properties-property .property-point {
+  height: 3px;
+  border-radius: 50%;
+  width: 3px;
+  background: #a8a8a8
+}
+.car-list-home-container .car-list-home .car-list-card-description-button {
+  position: absolute;
+  height: 48px;
+  width: 48px;
+  background-color: #10a310;
+  border-radius: 50%;
+  top: -10px;
+  right: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center
+}
+.car-list-home-container .car-list-home .car-list-card-price-distance {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-top: 1px solid #e0dbdb;
+  padding-right: 10px
+}
+.car-list-home-container .car-list-home .car-list-card-price-distance .car-list-card-price {
+  padding: 16px
+}
+.car-list-home-container .car-list-home .car-list-card-price-distance .car-list-card-price-title {
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 1.33;
+  letter-spacing: .16px;
+  color: #1f1f1f
+}
+.car-list-home-container .car-list-home .car-list-card-price-distance .car-list-card-price-sub-title {
+  font-size: 14px;
+  font-weight: normal;
+  line-height: 1.43;
+  letter-spacing: .24px;
+  color: #a8a8a8;
+  text-decoration: line-through
+}
+.car-list-home-container .car-list-home .car-list-card-price-distance .car-list-card-price-availability-text {
+  font-size: 11px;
+  font-weight: normal;
+  line-height: 1.43;
+  letter-spacing: .24px;
+  color: #7a7777
+}
+.car-list-home-container .car-list-home .car-list-card-price-distance .car-list-card-distance {
+  border: 1px solid;
+  background: #fbfff5;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  border: 1px solid lightgray;
+  padding: 4px;
+  border-radius: 2px
+}
+.car-list-home-container .car-list-home .car-list-card-price-distance .car-list-card-distance>img {
+  height: 16px;
+  width: 16px
+}
+.car-list-home-container .car-list-home .car-list-card-price-distance .car-list-card-distance-place {
+  font-size: 12px;
+  font-weight: normal;
+  line-height: 1.33;
+  letter-spacing: .4px;
+  color: #666
+}
+
+.car-list-home-container .car-list-home .car-list-shimmers {
+  width: 300%;
+  display: flex;
+  gap: 10px
+}
+.car-list-home-container .car-list-home .car-list-shimmers-shimmer {
+  height: 300px;
+  width: 280px
+}
+.car-list-home-container .car-list-home-chevrons {
+  display: none
+}
+.car-list-card-description-reviews-icon .fa-star {
+color: green;
+}
+.navbar-secondary {
+  background-color: #f8f9fa; 
+}
+.car-list-home-container {
+  display: flex;
+  flex-direction: row;
+}
+.card {
+  border: 1px solid #ced4da; 
+  border-radius: 0.25rem; 
+  margin-bottom: 1rem; 
+}
+.card-header {
+  background-color: #28a745; 
+  color: white; 
+  padding: 0.75rem 1.25rem; 
+}
+.card-body {
+  padding: 1rem; 
+}
+.form-control {
+  margin-bottom: 1rem; 
+}
+.car-list-card {
+  border: 1px solid #ced4da; 
+  border-radius: 0.25rem; 
+  margin-bottom: 1rem; 
+}
+.car-list-card-image img {
+  width: 100%; 
+  object-fit: cover; 
+}
+.car-list-card-description {
+  padding: 1rem; 
+}
+.car-list-card-price {
+  
+  padding-top: 1rem; 
+}
+.car-list-card-price-availability-text {
+  font-weight: bold; 
+}
+.car-list-card-price-title {
+  margin-top: 0.5rem;
+}
+.car-list-card-price-sub-title {
+  color: #6c757d; 
+}
+button{
+  width: 76px;
+  height: 60px;
+  padding: 5px;
+  margin: 0;
+}
+.button5{
+  width: 100px;
+  height: 60px;
+  padding: 5px;
+  margin: 0;
+}
+.button5{
+  width: 105px;
+  height: 60px;
+  padding: 5px;
+  margin: 0;
+}
+.button6{
+  width: 100px;
+  height: 70px;
+  padding: 5px;
+  margin: 0;
+}
+.button7{
+  width: 100px;
+  height: 60px;
+  padding: 5px;
+  margin: 0;  
+}
+.button8{
+  width: 105px;
+  height: 60px;
+  padding: 5px;
+  margin: 0;
+}
+.button9{
+  width: 100px;
+  height:70px;
+  padding:5px;
+  margin: 0;
+}
+
+/* Default styles for larger screens */
+.col-4 {
+  width: 25%;
+  float: left;
+  box-sizing: border-box; /* Include padding and border in the element's total width and height */
+}
+.filter{
+  margin-left: 40px;
+}
+.filter-sm{
+  display: none;
+  background-color: #f5f5f5;
+  
+}
+.filter-md{
+  display: block;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+
+}
+.dropdown img{
+  border-radius: 50%;
+}
+
+
+.dropbtn {
+
+  color: white;
+  padding: 10px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+}
+
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 80px;
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+/* Mobile responsiveness */
+@media only screen and (max-width: 768px) {
+  .col-4 {
+      width: 100%;
+      float: none;
+  }
+}
+@media  screen  and (max-width: 450px) {
+  .filter-sm{
+    display: block;
+    margin: 20px;
+    
+    
+  }
+  .filter-md{
+    display: none;
+  }
+  
+}

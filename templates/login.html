@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login and Signup</title>
+  <link rel="stylesheet" href="templates/static/css/style.css">
+
+</head>
+<body>
+
+<div class="wrapper">
+  <div class="title-text">
+    <div class="title login">Login</div>
+    <div class="title signup">Signup</div>
+  </div>
+  <div class="form-container">
+    <div class="slide-controls">
+      <input type="radio" name="slide" id="login" checked>
+      <input type="radio" name="slide" id="signup">
+      <label for="login" class="slide login">Login</label>
+      <label for="signup" class="slide signup">Signup</label>
+      <div class="slider-tab"></div>
+    </div>
+    <div class="form-inner">
+      <form action="select.html" class="login">
+        <div class="field">
+          <input type="email" id="lemail" name="lemail" placeholder="Email Address" required>
+        </div>
+        <div class="field">
+          <input type="password" id="lpassword" name="lpassword" placeholder="Password" required>
+        </div>
+        <div class="field btn">
+          <div class="btn-layer"></div>
+          <button type="button" onclick="login()">Login</button>
+        </div>
+        <div class="signup-link">Not a member? <a href="#">Signup now</a></div>
+      </form>
+      <form action="#" class="signup">
+        <div class="field">
+            <input type="text" id="susername" name="susername" placeholder="Username" required>
+          </div>
+        <div class="field">
+          <input type="email" id="semail" name="semail" placeholder="Email Address" required>
+        </div>
+        <div class="field">
+          <input type="text" id="smobile" name="smobile" placeholder="Mobile Number" required>
+        </div>
+        <div class="field">
+         
+          <input type="password" id="spassword" name="spassword" placeholder="Password" required>
+        </div>
+       
+        <div class="field btn">
+          <div class="btn-layer"></div>
+          <button type="button" onclick="SignUp()">SignUp</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+</body>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+<script>
+     const loginText = document.querySelector(".title-text .login");
+      const loginForm = document.querySelector("form.login");
+      const loginBtn = document.querySelector("label.login");
+      const signupBtn = document.querySelector("label.signup");
+      const signupLink = document.querySelector("form .signup-link a");
+      signupBtn.onclick = (()=>{
+        loginForm.style.marginLeft = "-50%";
+        loginText.style.marginLeft = "-50%";
+      });
+      loginBtn.onclick = (()=>{
+        loginForm.style.marginLeft = "0%";
+        loginText.style.marginLeft = "0%";
+      });
+      signupLink.onclick = (()=>{
+        signupBtn.click();
+        return false;
+      });
+      function SignUp(){
+      
+        let formData =new FormData();
+        formData.append("susername",$("#susername").val());
+        formData.append("semail",$("#semail").val());
+        formData.append("smobile",$("#smobile").val());
+        formData.append("spassword",$("#spassword").val());
+        $.ajax({
+          type: "POST",
+          url: "/signup",
+          data: formData,
+          encode: true,
+          dataType: 'json',
+          processData: false,
+          contentType: false,
+
+        }).done(function(response){
+          if(response=="Done"){
+        
+            window.location.href="/";
+      
+              
+          }
+          else{
+            alert(response);
+          }
+
+        });
+      }
+      function login(){
+        let formData = new FormData();
+        formData.append("lemail",$("#lemail").val());
+        formData.append("lpassword",$("#lpassword").val());
+        $.ajax({
+          type: "POST",
+          url: "/login",
+          data: formData,
+          encode: true,
+          dataType: 'json',
+          processData: false,
+          contentType: false,
+
+        }).done(function(response){
+          if(response=="Done"){
+        
+            window.location.href="/";
+      
+          }
+          else{
+            alert(response);
+          }
+
+        });
+      }
+</script>
+</html>
